@@ -16,15 +16,16 @@ import os  # 引入 Python 系統模組，用來進行與作業系統相關的�
 from rich import print as richprint  # 從 rich 套件匯入 print 函式，並重新命名為 richprint，可用來格式化輸出、顯示彩色文字等
 
 # pip install langchain_openai  langchain_groq  langchain_google_genai  langchain_ollama 安裝 langchain_openai、langchain_groq、langchain_google_genai、langchain_ollama 套件
-from langchain_openai import ChatOpenAI  # 從 langchain_openai 模組引入 ChatOpenAI 類別，此類別可用於與 OpenAI 的聊天模型做互動
+# from langchain_openai import ChatOpenAI  # 從 langchain_openai 模組引入 ChatOpenAI 類別，此類別可用於與 OpenAI 的聊天模型做互動
 from langchain_groq import ChatGroq  # 從 langchain_groq 模組引入 ChatGroq 類別，此類別用於操作 Groq 平台上的聊天模型做互動
 from langchain_google_genai import ChatGoogleGenerativeAI  # 從 langchain_google_genai 模組引入 ChatGoogleGenerativeAI 類別，可用於跟 Google 的聊天模型做互動
-from langchain_ollama import ChatOllama  # 從 langchain_ollama 模組引入 ChatOllama 類別，此類別可用於與 Ollama 的聊天模型做互動
+# from langchain_ollama import ChatOllama  # 從 langchain_ollama 模組引入 ChatOllama 類別，此類別可用於與 Ollama 的聊天模型做互動
 
 # load_dotenv()  # 呼叫 load_dotenv() 函式以從 .env 檔案中載入環境變數，讓程式可以使用設定好的 API 金鑰或其他設定值
 
 # import streamlit as st  # 匯入 Streamlit 套件，用於建立網頁式使用者介面
 
+'''
 # OpenAI GPT-4o-mini
 def openai_generate_response(prompt):
     # 定義 openai_generate_response 函式，使用 OpenAI 的 GPT-4o-mini 模型生成回應。
@@ -46,6 +47,7 @@ def openai_generate_response(prompt):
     
     return response  
     # 將模型生成的回應返回給呼叫方
+'''
 
 # Groq Llama3-8b-8192
 def groq_generate_response(prompt):
@@ -93,6 +95,7 @@ def google_generate_response(prompt):
     return response
     # 將模型生成的回應返回給呼叫方
 
+'''
 # Ollama Llama3.2 1B
 def ollama_generate_response(prompt):
     # 定義 ollama_generate_response 函式，使用 local ollama 平台的 llama3.2:1b 模型生成回應
@@ -114,6 +117,7 @@ def ollama_generate_response(prompt):
 
     return response 
     # 將模型生成的回應返回給呼叫方
+'''
 
 # 測試 LLM 模型回應
 # richprint(groq_generate_response("What is the capital of France?"))  # 使用 LLM 模型回答「法國的首都是哪裡？」
