@@ -1,6 +1,6 @@
 # pip install streamlit  安裝 streamlit 套件，用於建立網頁式使用者介面
 import streamlit as st  # 匯入 Streamlit 套件，用於建立網頁式使用者介面
-from Navie_RAG_txt_CharacterTextSplitter_persist import rag_chain  # 從 Navie_RAG_txt_CharacterTextSplitter_persist 模組匯入 rag_chain，此物件包含檢索與生成的工作流程
+from Navie_RAG_txt_CharacterTextSplitter import rag_chain  # 從 Navie_RAG_txt_CharacterTextSplitter_persist 模組匯入 rag_chain，此物件包含檢索與生成的工作流程
 import datetime  # 匯入 datetime 模組以取得當下時間
 
 st.title("LLM 文件(txt)諮詢系統")  # 設定網頁標題，建立主標題文字
