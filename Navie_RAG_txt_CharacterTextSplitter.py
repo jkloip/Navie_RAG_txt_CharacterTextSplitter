@@ -11,7 +11,7 @@
 # 第1步-引用模組，連接 OpenAI、Groq、Google、Ollama 的 LLM 模型
 import os  # 引入 Python 系統模組，用來進行與作業系統相關的操作，如讀取環境變數、路徑處理等
 # pip install python-dotenv  安裝 python-dotenv 套件，用來讀取 .env 檔案中的環境變數
-from dotenv import load_dotenv  # 從 dotenv 套件引入 load_dotenv 函式，此函式可以從 .env 檔案中讀取環境變數，不需將敏感資訊硬編碼在程式中
+# from dotenv import load_dotenv  # 從 dotenv 套件引入 load_dotenv 函式，此函式可以從 .env 檔案中讀取環境變數，不需將敏感資訊硬編碼在程式中
 # pip install rich  安裝 rich 套件，用來格式化輸出、顯示彩色文字等
 from rich import print as richprint  # 從 rich 套件匯入 print 函式，並重新命名為 richprint，可用來格式化輸出、顯示彩色文字等
 
@@ -21,7 +21,9 @@ from langchain_groq import ChatGroq  # 從 langchain_groq 模組引入 ChatGroq 
 from langchain_google_genai import ChatGoogleGenerativeAI  # 從 langchain_google_genai 模組引入 ChatGoogleGenerativeAI 類別，可用於跟 Google 的聊天模型做互動
 from langchain_ollama import ChatOllama  # 從 langchain_ollama 模組引入 ChatOllama 類別，此類別可用於與 Ollama 的聊天模型做互動
 
-load_dotenv()  # 呼叫 load_dotenv() 函式以從 .env 檔案中載入環境變數，讓程式可以使用設定好的 API 金鑰或其他設定值
+# load_dotenv()  # 呼叫 load_dotenv() 函式以從 .env 檔案中載入環境變數，讓程式可以使用設定好的 API 金鑰或其他設定值
+
+# import streamlit as st  # 匯入 Streamlit 套件，用於建立網頁式使用者介面
 
 # OpenAI GPT-4o-mini
 def openai_generate_response(prompt):
@@ -52,7 +54,8 @@ def groq_generate_response(prompt):
     
     chat_groq = ChatGroq(
         model="llama3-8b-8192", 
-        api_key=os.getenv("GROQ_API_KEY"), 
+        #api_key=os.getenv("GROQ_API_KEY"), 
+        api_key=GROQ_API_KEY,
         temperature=0
     )  
     # 建立一個 ChatGroq 物件，設定:
@@ -74,7 +77,8 @@ def google_generate_response(prompt):
 
     chat_google = ChatGoogleGenerativeAI(
         model="gemini-1.5-flash", 
-        api_key=os.getenv("GEMINI_API_KEY"), 
+        #api_key=os.getenv("GEMINI_API_KEY"), 
+        api_key=GEMINI_API_KEY,
         temperature=0
     )
     # 建立一個 ChatGoogleGenerativeAI 物件，設定:
